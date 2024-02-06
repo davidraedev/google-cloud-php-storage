@@ -362,7 +362,7 @@ class Lifecycle implements \ArrayAccess, \IteratorAggregate
     #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
-        unset($this->lifecycle['rule'][$offset]);
+        array_splice($this->lifecycle['rule'], $offset, 1);
     }
 
     /**
